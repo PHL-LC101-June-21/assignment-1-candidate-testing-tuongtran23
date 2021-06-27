@@ -33,6 +33,11 @@ function askQuestion() {
     console.log("Your Answer: ", candidateAnswer);
     console.log("Correct Answer: ", correctAnswers[i]);
   }
+
+  console.log("Print cadidateAnswers list here:")
+  for (let i = 0; i < questions.length; i++){
+    console.log(candidateAnswers[i]);
+  }    
   
   
   
@@ -44,11 +49,12 @@ function gradeQuiz(candidateAnswers) {
 
 
   let grade = 0;
-  for (let i = 0; i < questions.length; i++){
-    if (candidateAnswer[i] == correctAnswers[i]){
+  for (let i = 0; i < candidateAnswers.length; i++){
+    if (candidateAnswers[i].toUpperCase() == correctAnswers[i].toUpperCase()){
       grade += 20;
     }
   }
+  console.log(`The total grade is ${grade}`)
   
 
   return grade;
